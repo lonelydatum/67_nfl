@@ -7,6 +7,8 @@ gsap.defaults({
   ease: "power3.out"
 });
 
+
+const READ_T2 = 1.8
 const read = {
 	percentGoBack: 2.5,
 	betOnNFL: 2.2, 
@@ -71,7 +73,7 @@ function slider(read=2){
 
 	tl.add("t1")
 	tl.from(".t1a", {duration:.26, x:"-=130", y:"+=30", opacity:0}, "t1")
-	tl.from(".t1b", {duration:.26, x:"+=130", y:"-=30", opacity:0}, "t1+=.6")
+	tl.from(".t1b", {duration:.26, x:"+=130", y:"-=30", opacity:0}, "t1+=.4")
 	
 	tl.add(bgFadeOut(1.5))
 	return tl
@@ -82,7 +84,7 @@ function standard(){
 	tl.add(slider(), "+=.5")
 	// tl.from(".logo2", {duration:.3, opacity:0}, "+=.1")
 	tl.from(".t2", {duration:.3, opacity:0}, "+=.3")
-	tl.to(".t2", {duration:.2, opacity:0}, `+=2`)
+	tl.to(".t2", {duration:.2, opacity:0}, `+=${READ_T2}`)
 	tl.from(".t3", {duration:.3, opacity:0}, "+=.3")
 	tl.to(".t3", {duration:.3, opacity:0}, "+=2")
 	tl.from(".t4", {duration:.3, opacity:0}, "+=.3")
@@ -90,7 +92,7 @@ function standard(){
 
 	
 	tl.from([".footer"], {duration:.3, opacity:0}, "+=.5")
-	tl.add(olg())
+	tl.add(olg(), "-=.3")
 
 	return tl
 }
@@ -148,7 +150,7 @@ function b_320x50(){
 
 	
 	tl.from([".footer"], {duration:.3, opacity:0}, "+=.5")
-	tl.add(olg())
+	tl.add(olg(), "-=.3")
 
 	return tl
 }
